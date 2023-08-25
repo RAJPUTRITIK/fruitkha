@@ -1,0 +1,49 @@
+{% extends 'header_footer.html' %}
+{% load static %}
+{% block content %}
+
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Get 24/7 Support</p>
+						<h1>Register us</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- contact form -->
+	<div class="contact-from-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mb-5 mb-lg-0">
+					<div class="form-title">
+						<h2>Register your Self</h2>
+					</div>
+				 	<div id="form_status"></div>
+					<div class="contact-form">
+						{{msg}}
+						<form method="post" id="fruitkha-contact" action="{% url 'otp' %}">
+                            {% csrf_token %}
+							<p>
+								<input type="text" placeholder="Otp" name="otp" id="name">
+							</p>
+							
+							<p><input type="submit" value="Verify"></p>
+						</form>
+						
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	<!-- end contact form -->
+
+	{% endblock  %}
